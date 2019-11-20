@@ -1,0 +1,38 @@
+
+
+<br/>
+<br/>
+  
+<br/>
+
+<br/>
+
+<% if flash[:notice] %>
+<div class="alert alert-success">
+  <strong>Success!</strong> Your order has been received!!  
+</div>
+<%end %>
+
+
+<center>
+<h1>Categories</h1>
+</center>
+<br/>
+<div class="container">
+  <div class="row">
+  <% @categories.each do |category| %> 
+  <%= link_to category_products_path(category) do %>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <center><h5 class="card-title"><%= category.title %></h5></center>
+          <%end%>
+          <center><h6 class="card-subtitle mb-2 text-muted">(<%= category.products.count %> products)</h6> </center>
+          <p class="card-text"></p>
+
+          
+        </div>
+      </div>
+  </div>
+  <%end%>
+</div>
